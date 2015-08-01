@@ -2,7 +2,7 @@
 var gulp   = require('gulp'),
     config = {
         paths: {
-            dest: '/dist',
+            dest: 'dist',
             scripts: ['src/*.ts', 'src/**/*.ts'],
             typings: ['typings/**/*.d.ts'],
             tests: {

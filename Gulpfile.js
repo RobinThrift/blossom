@@ -1,13 +1,16 @@
 
 var gulp   = require('gulp'),
+    path   = require('path'),
     config = {
         paths: {
             dest: 'dist',
-            scripts: ['src/*.ts', 'src/**/*.ts'],
-            typings: ['typings/**/*.d.ts'],
+            scripts: ['src/*.js', 'src/**/*.js'],
             tests: {
                 unit: ['test/*.spec.js', 'test/**/*.spec.js']
             }
+        },
+        eslint: {
+            rcPath: path.join(__dirname + '/.eslintrc')
         }
     },
     args   = require('yargs')(process.argv)
@@ -15,42 +18,43 @@ var gulp   = require('gulp'),
                 .default('only', undefined)
                 .argv;
 
-function concat(a, b) {
-    return a.concat(b);
-}
-
 gulp.task('scripts:lint', function() {
-    var tslint = require('gulp-tslint');
+    var eslint = require('gulp-eslint');
 
     return gulp.src(config.paths.scripts)
-        .pipe(tslint())
-        .pipe(tslint.report('verbose'));
+        .pipe(eslint({
+            configFile: config.eslint.rcPath
+        }))
+        .pipe(eslint.format())
+        .pipe(eslint.failOnError())
 });
 
 gulp.task('scripts:transpile', ['scripts:lint'], function() {
-    var typescript = require('gulp-typescript');
+    var babel = require('gulp-babel');
 
-    return gulp.src(concat(config.paths.scripts, config.paths.typings))
-        .pipe(typescript({
-            noExternalResolve: true,
-            noImplicitAny: false,
-            target: 'ES5',
-            module: 'common'
-        }))
+    return gulp.src(config.paths.scripts, {base: './src'})
+        .pipe(babel({}))
+        .on('error', function(err) {
+            console.error(err);
+        })
         .pipe(gulp.dest(config.paths.dest));
 });
 
+gulp.task('scripts', ['scripts:transpile']);
+
 gulp.task('scripts:watch', function() {
-    gulp.watch(config.paths.scripts, ['scripts:transpile']);
+    gulp.watch(config.paths.scripts, ['scripts']);
 });
 
-gulp.task('test:unit', function() {
+gulp.task('test:unit', ['scripts'], function() {
     var mocha = require('gulp-mocha');
 
-    return gulp.src(config.paths.tests.unit, {read: false})
+    return gulp.src(config.paths.tests, {read: false})
         .pipe(mocha({
+            reporter: 'spec',
             ui: 'tdd',
-            grep: args.only
+            grep: args.only,
+            require: ['should', path.join(__dirname, '/test/babelRegister')]
         }));
 });
 

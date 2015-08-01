@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "A extensible codename generator",
   "main": "dist/index.js",
+  "bin": {
+    "blossom": "./dist/cli.js"
+  },
   "scripts": {
     "test": "gulp test"
   },

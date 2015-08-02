@@ -49,7 +49,7 @@ gulp.task('scripts:watch', function() {
 gulp.task('test:unit', ['scripts'], function() {
     var mocha = require('gulp-mocha');
 
-    return gulp.src(config.paths.tests, {read: false})
+    return gulp.src(config.paths.tests.unit, {read: false})
         .pipe(mocha({
             reporter: 'spec',
             ui: 'tdd',

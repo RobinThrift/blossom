@@ -1,5 +1,17 @@
 # blossom
 
+## Installation
+`$ npm install -g blossom`
+
+## Usage
+- `$ blossom <GENERATOR> [OPTIONS]`
+- `$ blossom help` for more info
+
+## Included Generators
+- `wiktionary`: `blossom wiktionary [OPTIONS] <FORMAT>`
+    - `FORMAT`: Can be any number of Alphanumeric characters plus `_.-`. [:name] will be understood as the word category "name" and will be resolved with wiktionary.
+    - `-n, --count`: Will produce n code names
+
 ## Git Commit Messages
 
 - Use the past tense ("Added feature" not "Add feature")

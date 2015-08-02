@@ -33,7 +33,9 @@ gulp.task('scripts:transpile', ['scripts:lint'], function() {
     var babel = require('gulp-babel');
 
     return gulp.src(config.paths.scripts, {base: './src'})
-        .pipe(babel({}))
+        .pipe(babel({
+            optional: ['runtime']
+        }))
         .on('error', function(err) {
             console.error(err);
         })

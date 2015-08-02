@@ -1,24 +1,24 @@
 {
-  "name": "blossom",
+  "name": "omnom",
   "version": "0.1.0",
   "description": "A extensible codename generator",
   "main": "dist/index.js",
   "bin": {
-    "blossom": "./dist/cli.js"
+    "omnom": "./dist/cli.js"
   },
   "scripts": {
     "test": "gulp test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/RobinThrift/blossom.git"
+    "url": "https://github.com/RobinThrift/omnom.git"
   },
   "author": "Robin Thrift <thrift.d.robin@googlemail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/RobinThrift/blossom/issues"
+    "url": "https://github.com/RobinThrift/omnom/issues"
   },
-  "homepage": "https://github.com/RobinThrift/blossom",
+  "homepage": "https://github.com/RobinThrift/omnom",
   "devDependencies": {
     "babel-core": "^5.8.20",
     "babel-eslint": "^4.0.5",

@@ -1,4 +1,4 @@
-# blossom
+# omnom
 
 ## Installation
 `$ npm install -g blossom`

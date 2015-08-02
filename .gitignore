@@ -4,7 +4,3 @@
 # NPM
 node_modules
 npm-debug.log
-
-# Project
-dist
-test/tmp

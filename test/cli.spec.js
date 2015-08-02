@@ -6,7 +6,7 @@ suite('Blossom – CLI', () => {
     test('version', function(done) {
         exec(join(__dirname, '../dist/cli.js version'), (err, stdout) => {
             if (err) { return done(err); }
-            stdout.should.match(/Blossom \- version: [0-9]+.[0-9]+.[0-9]+/);
+            stdout.should.match(/Omnom \- version: [0-9]+.[0-9]+.[0-9]+/);
             done();
         });
     });

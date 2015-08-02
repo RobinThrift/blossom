@@ -1,4 +1,7 @@
 # omnom
+[![travis](https://img.shields.io/travis/RobinThrift/omnom.svg?style=flat-square)](https://travis-ci.org/RobinThrift/omnom)
+![deps](https://img.shields.io/david/RobinThrift/omnom.svg?style=flat-square)
+![travis](https://img.shields.io/david/dev/RobinThrift/omnom.svg?style=flat-square)
 
 ## Installation
 `$ npm install -g blossom`

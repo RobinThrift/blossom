@@ -4,14 +4,14 @@
 ![travis](https://img.shields.io/david/dev/RobinThrift/omnom.svg?style=flat-square)
 
 ## Installation
-`$ npm install -g blossom`
+`$ npm install -g omnom`
 
 ## Usage
-- `$ blossom <GENERATOR> [OPTIONS]`
-- `$ blossom help` for more info
+- `$ omnom <GENERATOR> [OPTIONS]`
+- `$ omnom help` for more info
 
 ## Included Generators
-- `wiktionary`: `blossom wiktionary [OPTIONS] <FORMAT>`
+- `wiktionary`: `omnom wiktionary [OPTIONS] <FORMAT>`
     - `FORMAT`: Can be any number of Alphanumeric characters plus `_.-`. [:name] will be understood as the word category "name" and will be resolved with wiktionary.
     - `-n, --count`: Will produce n code names
 

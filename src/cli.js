@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 import {loadGenerators} from './utils';
-import blossom from './index';
+import omnom from './index';
 
 loadGenerators()
     .then((generators) => {
-        blossom(process.argv, generators);
+        omnom(process.argv, generators);
     }, (err) => {
         console.error(err);
     });

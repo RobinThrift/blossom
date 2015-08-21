@@ -3,7 +3,7 @@ import {chainableSpy} from '../helper';
 import * as wiktionary from '../../src/generators/wiktionary';
 import nock from 'nock';
 
-suite('Blossom – Generators – Wiktionary', () => {
+suite('omnom – Generators – Wiktionary', () => {
     let commander;
 
     setup(() => {

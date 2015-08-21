@@ -2,7 +2,7 @@
 import {exec} from 'child_process';
 import {join} from 'path';
 
-suite('Blossom – CLI', () => {
+suite('omnom – CLI', () => {
     test('version', function(done) {
         exec(join(__dirname, '../dist/cli.js version'), (err, stdout) => {
             if (err) { return done(err); }
